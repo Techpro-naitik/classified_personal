@@ -1,0 +1,71 @@
+.add-product-form{
+    width:600px;
+    margin:auto;
+    }
+    .headingRow h2{
+    font-weight:600;
+    color:#000000;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    }
+    .headingRow p{
+    font-weight: 600;
+    color:#000000;
+    font-family: sans-serif;
+    }
+    .addimages,.add-stuff-categories{
+    padding:15px;
+    background:#ffffff;
+    border-radius:5px;
+    width:100%;
+    margin-bottom:15px;
+    }
+    .required{
+    color:#ff0000;
+    }
+    .add-photos-heading,.add-stuff-Category-heading{
+    color: #222;
+    font-family: sans-serif;
+    font-size: 15px !important;
+    padding-bottom: 10px;
+    font-weight: 600;
+    }
+    .align_middle {
+    vertical-align: middle;
+    }
+    .dis_none {
+    display: none !important;
+    }
+    .errorMessage {
+    float: left;
+    width: 100%;
+    color: red;
+    }
+    #products-form .blog_images>label.input-file-trigger {
+    float: left;
+    }
+    
+    #products-form label {
+    font-size: 1.1em;
+    font-weight: normal !important;
+    }
+    .img_browse {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    padding-top: 30%;
+    box-shadow: 0px 0px 15px #ddd;
+    }
+    .add_img {
+    background-image: url(https://joysalescript.com/css/images/plus.png);
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    }
+    .add-atuff-container label{
+    font-weight: 500;
+    }

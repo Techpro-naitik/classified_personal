@@ -1,0 +1,65 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container pt-lg-md fohei">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card bg-secondary shadow border-0" style="height: 500px">
+            <div class="card-header bg-white pb-5">
+              <div class="text-muted text-center mb-3">
+                <b>Notification ! </b>
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div style="width: 35%; border: 1px solid; height: 100%">
+                <div
+                  *ngFor="let item of notificationJSON"
+                  style="
+                    border: 1px solid;
+                    height: 12%;
+                    margin: 1px;
+                    padding: 5px;
+                    
+                  "
+
+                >
+                  <span (click)="passData(item.id)">{{ item.data }}</span> <br />
+                </div>
+              </div>
+              <div
+                style="
+                  border: 1px solid;
+                  position: absolute;
+                  float: inline-end;
+                  left: 40%;
+                  top: 20%;
+                  width: 50%;
+                  height: 70%;
+                  background: white;
+                "
+               
+              >
+                <span  *ngFor ="let item of getData" style="    margin-left: 100px;"> {{item.data}}</span><br/>
+                <div style="    position: relative;
+                text-align: center;
+                top: 100px;">
+                    No data there!
+                </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

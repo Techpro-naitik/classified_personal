@@ -1,0 +1,27 @@
+.catcls{
+    border: 1px solid;
+/* height: 300PX%; */
+height: 440px;
+}
+.wd{
+
+    width: 350px;
+    position: relative;
+    bottom: 91px;
+    left: 313px;
+    margin-top: 3px;
+
+left: 313px;
+} 
+.det{
+    position: absolute;
+    left: 322px;
+    top: 1px;
+}
+.ww{
+    width: 350px;
+    position: relative;
+    bottom: 91px;
+    left: 313px;
+    margin-top: 3px;
+}

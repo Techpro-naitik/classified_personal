@@ -1,0 +1,388 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container-fluid pt-lg-md" style="padding: 0 !important">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-body px-lg-5 py-lg-5">
+              <ngx-ui-loader></ngx-ui-loader>
+
+              <form
+                role="form"
+                [formGroup]="AddPostForm"
+                (ngSubmit)=
+                "SubmitPostForm()"
+                class="add-product-form"
+              >
+                <div class="row headingRow">
+                  <div
+                    class="add-product-heading col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                  >
+                    <h2 class="top-heading-text">Advertise free</h2>
+                    <p class="top-heading-sub-text">
+                      Sale Tip: Tell us more about your photos &amp; upload only
+                      quality photos!
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="addimages">
+                    <div class="add-photos-heading">
+                      <span
+                        >Add photos of your product
+                        <span class="required">*</span></span
+                      >
+                    </div>
+                    <div
+                      class="input-file-container dis_inline_block align_middle"
+                    >
+                      <input
+                        class="input-file dis_none"
+                        type="file"
+                        id="image_file"
+                        multiple="true"
+                        name="XUploadForm[file]"
+                        accept=".png, .jpg, .jpeg"
+                        
+                        #file
+                      #fileInput
+                        (change)="uploadFile($event,file.files)"
+                      />
+
+                      <div
+                        class="errorMessage"
+                        id="Sitesettings_logo_em_"
+                      ></div>
+                      <div class="blog_images margin_bottom20">
+                        <label style="display: inline-block;
+                        float: left;
+                        width: 100px;
+                        height: 100px;
+                        margin:0 10px 8px 0;"
+                          tabindex="0"
+                          for="image_file"
+                          
+                          class="input-file-trigger direcc"
+                          ><div class="img_browse">
+                          
+                         
+                            </div
+                        ></label>
+                      </div>
+                      <div class="add_img_bind" *ngFor ="let item of ImpageArray" style="width: 100px;
+                      height: 100px;
+                      object-fit: cover;
+                      display: inline-block;
+                      margin:0 10px 8px 0;">
+                        <img [src]=item width="95" height="95" style="object-fit:cover;">
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="add-stuff-categories">
+                    <div class="add-stuff-Category-heading">
+                      <span>What is your listing based on??</span>
+                    </div>
+                    <div class="add-atuff-container">
+                      <div class="form-group">
+                        <label for="power">Select Category *</label>
+                        <select class="form-control"   formControlName="CategoryID" id="power" #myCategory (click)="get_Category_byId(myCategory.value)" required>
+                          <option  value=0 >
+                            ---- Add Category ---
+                          </option>
+                            <option *ngFor="let pow of get_Category_api" value={{pow.CategoryId}}>
+                                {{pow.CategoryName}}
+                              </option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="power">Select Sub-category* </label>
+                        <select class="form-control"  formControlName="SubCategoryID" id="power" required  #mySubcatory (click)="Brands(mySubcatory.value)" >
+                            <option value="0">Add Sub Category</option>
+                          <option *ngFor="let pow of get_SubCategory_api" value={{pow.SubCategoryId}}>
+                            {{pow.SubCategoryName}}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="power">Select Child Sub-category* </label>
+                        <select class="form-control"  formControlName="ChildSubCategoryID" id="power" required  #mySubcatory (click)="Brands(mySubcatory.value)" >
+                            <option value="0">Add child Sub Category</option>
+                          <option *ngFor="let pow of CTyId_Data" value={{pow.ChildSubCateoryId}}>
+                            {{pow.ChildSubCateoryName}}
+                          </option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label for="" >Disclosed Price</label>
+                        <label class="custom-toggle"> 
+                          <input type="checkbox"   (click)="disclosed()">
+                          <span class="custom-toggle-slider rounded-circle"></span>
+  
+                        </label>
+                      </div>
+
+                      <div>
+                        <label for="" >Fixed Price </label>
+                        <label class="custom-toggle"> 
+                          <input type="checkbox"  (click)="FixedPrice()">
+                          <span class="custom-toggle-slider rounded-circle"></span>
+  
+                        </label>
+                      </div>
+                      
+                
+                      <div>
+                        <label for="" >Range </label>
+                        <label class="custom-toggle"> 
+                          <input type="checkbox"  (click)="toggleRange()">
+                          <span class="custom-toggle-slider rounded-circle"></span>
+  
+                        </label>
+                      </div>
+                      
+                    
+                      <div class="form-group" *ngIf="show">
+                        <label for="power">Price :</label>
+                        <div class="form-group">
+                          <input
+                            type="text" formControlName="Price"
+                            class="form-control"
+                            placeholder="Enter Price"
+                          />
+                          <!-- </select> -->
+                        </div>
+                      </div>
+
+                      
+                      
+
+
+                      <div *ngIf="Range || show!==show" >
+                        <div>
+                          <label for="power">Min Price :</label>
+                          <input type="text"   class="form-control" formControlName="MinPrice"   placeholder="Please Enter Min Price">
+
+                        </div>
+                        <div>
+                          <label for="power"> Max Price :</label>
+                          <input type="text"   class="form-control" formControlName="MaxPrice"   placeholder="Please Enter Max Price">
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="power">Location Name:</label>
+                      <div> 
+                          <input type="text"   class="form-control" formControlName="LocationName"   placeholder="Enter the Locaton in Mannual way">
+                      </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="power">Brand Name:</label>
+                        <select class="form-control" formControlName="BrandID" id="power" required>
+                          <option value=0>
+                         ----Add Brand ---
+                          </option>
+                          <option *ngFor="let pow of get_AllBrand_api" value='{{pow.BrandID}}'>
+                            {{pow.BrandName}}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="form-group"  >
+                        <label for="power">Make Year:</label>
+                        <select class="form-control"  #Year formControlName="MakeYear"   required>
+                          <option *ngFor="let pow of get_Year_Api_Response" value={{pow.Year}} >
+                            {{pow.Year}}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="form-group" [hidden]="cars">
+                        <label for="power">Model :</label>
+                        <select class="form-control"  formControlName="BrandID"  id="power" required>
+                        <option *ngFor="let pow of get_Model_Api_Response" value={{pow.ModelID}}>{{pow.ModelName}}</option>
+                      </select>
+                    </div>
+                    <!-- <div>
+                      <span (click)="addInput()">Add custom field +</span>
+
+                    </div> -->
+                  <div [hidden]="cars" >
+                    <div [hidden] = 'mlb'>
+                      <label for="power">Mobile Number verify : Cars</label>
+
+                      <input type="text"   class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="MobileNumber" placeholder="verify Mobile Number" >
+                      <div>
+                        <span   (click)="verifyMobile(MobileNumber)">verifyMobile</span>
+                      </div>
+                    </div>
+
+                    <div [hidden] = 'olB'>
+                      <label for="power">Please enter Otp</label>
+                      <input type="text"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="otp_Value" placeholder="verify Mobile Number" >
+                      <div>
+                        <span (click)="otp_call(otp_Value)">otp</span>
+                      </div>
+                    </div>
+
+                    
+                  </div>
+                  
+                  <div [hidden]="realState" >
+                    <div [hidden] = mlbrL>
+                      <label for="power">Mobile Number verify : Real State</label>
+
+                      <input type="text"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="MobileNumber" placeholder="verify Mobile Number" >
+
+                    </div>
+                    <div>
+                      <span (click)="verifyMobileRl(MobileNumber)">verifyMobile</span>
+                    </div>
+                    <div [hidden] = 'olBRl'>
+                      <label for="power">Please enter Otp</label>
+
+                      <input type="text"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="otp_Value" placeholder="verify Mobile Number" >
+                      <div>
+                        <span   (click)="otp_call(otp_Value)">otp</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div [hidden] = 'red'>
+                    <label for=""> Number is verified :</label>
+                    <input type="text" readonly  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="MobileNumber" >
+                  </div>
+                    <!-- <div class="form-group" formArrayName="controllerArray">
+                      <div
+                      *ngFor="
+                        let item of AddPostForm.controls.controllerArray.controls;
+                        let i = index
+                      "
+                      [formGroupName]="i"
+                    >
+                      <input class="form-control" formControlName="controlerInputName1" />
+                      <span (click)="removeInput(i)">remove custom field  -</span>
+                    </div>
+                  </div> -->
+                  
+    <!-- <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div> -->
+                      <!-- <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div> -->
+                      <!-- <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div> -->
+                      <!-- <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div> -->
+                      <!-- <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div> -->
+                      <!-- <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">gfd</option>
+    </select>
+    </div> -->
+                      <div class="form-group">
+                        <label for="power">Name </label>
+                        <input
+                          type="text" formControlName="ProductTitle"
+                          class="form-control"
+                          placeholder="Product Title"
+                        />
+                        <!-- </select> -->
+                      </div>
+                      <div class="form-group">
+                        <label for="power">Product Discription</label>
+                        <textarea 
+                          type="text" formControlName="ProductDescription"
+                          class="form-control"
+                          placeholder="Product Discription" rows="4" cols="50"
+                        ></textarea>
+                        <!-- </select> -->
+                      </div>
+                      <!-- <button  (click)="addfield()" >+</button>
+                      <div  id="textboxes"></div> -->
+                  
+                      <!-- [disabled]="!AddPostForm.valid"  -->
+                      <div>
+                        <button type="submit"  [disabled]="!AddPostForm.valid" 
+                         class="form-control">
+                          Add Post
+                        </button>
+                      </div>    
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

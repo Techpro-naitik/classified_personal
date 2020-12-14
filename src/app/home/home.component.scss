@@ -1,0 +1,114 @@
+.search-keywords{
+    width:800px;
+    margin:auto;
+    display: flex;
+    overflow: hidden;
+    border-radius:5px;
+}
+.search-keywords form{
+    position:relative;
+    width:100%;
+}
+.search-keywords form .keyword{
+    width: 32.33%;
+    float: left;
+}
+.search-keywords form .search-radius{
+    float:right;
+    width:67.60%;
+    display: flex;
+}
+.keyword input{
+    width:100%;
+    border-radius:5px 0 0 5px;
+}
+.search-radius input,.search-radius .selectdistance{
+    min-width:50% !important;
+}
+.search-radius .selectdistance select{
+    width:86% !important;
+}
+.search-radius input{
+    padding-right:50px !important;
+}
+.search-keywords input,.search-keywords select{
+    margin: 0;
+    color: #454545;
+    background: #fff;
+    height: 44px;
+    line-height: normal;
+    min-height: 44px;
+    padding-left:16px;
+    padding-right:16px;
+    border: 0 !important;
+    border-left: 1px solid rgba(0,0,0,.3) !important;
+    border-radius: 0;
+    box-shadow: none;
+}
+input:focus,select:focus{
+    border:none;
+    outline:none;
+}
+.search-radius input::before{
+    content: "\f05b";
+    display: inline-block;
+    // font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+}
+.se_geoloc_icon {
+    float: left;
+    position: static;
+    top: auto;
+    color: #6e6e6e;
+    margin-left: -50px;
+    width: 50px;
+    height: 44px;
+    cursor: pointer;
+}
+.se_geoloc_icon:before {
+    content: "\f05b";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    position: relative;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    top: 8px;
+    left: 17px;
+}
+.search_btn{
+    position: absolute;
+    right:0;
+}
+.searchbtn{
+    outline: none;
+    border: none;
+    padding: 10px 12px;
+    line-height: 24px;
+    background: #2fbdb4;
+    color: #ffffff;
+    cursor: pointer;
+}
+.more_dropdown{
+    margin-top:15px;
+    text-align:center;
+}
+.more_dropdown .advanced_search{
+    outline:none;
+    border:none;
+    color:#b2b2b2;
+    font-size:14px;
+    background:transparent;
+    padding:0;
+    cursor: pointer;
+}
+.more_dropdown .advanced_search:hover{
+    color:#454545;
+    transition:0.5s;
+}

@@ -1,0 +1,13 @@
+.resetcolor{
+    position: relative;
+    left:34%;
+}
+.reset-password-btn{
+    cursor:pointer !important;
+}
+.color_Text{
+    right: 17px;
+    color: red;
+    position: relative;
+    bottom: 0px;
+}

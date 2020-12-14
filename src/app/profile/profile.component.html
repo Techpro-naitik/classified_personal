@@ -1,0 +1,631 @@
+ <main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card card-profile shadow mt--300">
+        <div class="px-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 order-lg-2">
+             
+        
+              <div>
+                <div class="card-profile-image" *ngIf="getDataFormLocal_local !== null && getDataFormLocal_gmail === null && getDataFormLocal_fb === null " >
+                  <a href="javascript:void(0)">
+                    <img src="https://volleythat.com/wp-content/uploads/2019/10/dusk-2-800x800.png" class="rounded-circle">
+                  </a>
+                </div>
+                <div class="card-profile-image" *ngIf="getDataFormLocal_local === null && getDataFormLocal_gmail !== null && getDataFormLocal_fb === null ">
+                  <a href="javascript:void(0)">
+                    <img src="https://volleythat.com/wp-content/uploads/2019/10/dusk-2-800x800.png" class="rounded-circle">
+                  </a>
+                </div>
+                <div class="card-profile-image" *ngIf=" getDataFormLocal_fb !== null && getDataFormLocal_local === null && getDataFormLocal_gmail === null  ">
+                  <a href="javascript:void(0)">
+                    <img src="https://volleythat.com/wp-content/uploads/2019/10/dusk-2-800x800.png" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <!-- <span (click)="open(classic2, 'Notification', '')" >
+                  <i class="ni ni-bell-55 ni-3x" style="    position: relative;
+                  left: 140px;
+                  color: #dc1571;" [routerLink]="['/user-profile']"></i>
+      
+                </span> -->
+      
+      
+      
+                <!-- <ng-template #classic2 let-c="close" let-d="dismiss">
+                  <div class="modal-content bg-gradient-danger">
+                    <div class="modal-header">
+                      <h6 class="modal-title" id="modal-title-notification">Your attention is required</h6>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="py-3 text-center">
+                        <i class="ni ni-bell-55 ni-3x"></i>
+                        <h4 class="heading mt-4">You should read this!</h4>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                      </div>
+                    </div>
+                  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-white">Ok, Got it</button>
+                      <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+                    </div>
+                  </div>
+                </ng-template> -->
+              </div>
+    
+            </div>
+                      <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+              <div class="card-profile-actions py-4 mt-lg-0">
+                <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4" [routerLink]="['/verify']">Number verification</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Message</a>
+              </div>
+            </div>
+
+            
+            <div class="col-lg-4 order-lg-1">
+              <div class="card-profile-stats d-flex justify-content-center">
+                <div>
+                  <span class="heading">22</span>
+                  <span class="description">Friends</span>
+                </div>
+                <div>
+                  <span class="heading">10</span>
+                  <span class="description">Photos</span>
+                </div>
+                <div>
+                  <span class="heading">89</span>
+                  <span class="description">Comments</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="text-center mt-5">
+            <h3 *ngIf="getDataFormLocal_local !== null && getDataFormLocal_gmail === null && getDataFormLocal_fb === null ">{{getDataFormLocal_local.FullName}}
+              <!-- <span class="font-weight-light">, 27</span> -->
+              <div>
+                <a  style="    position: relative;
+                right: 35%; color: white;" class="btn btn-sm btn-default float-right" (click)="editFunt()" [hidden]="editName" >Edit Name</a>
+              </div>
+           
+
+
+
+          <div [hidden] ="editForm">
+            <form action="" [formGroup]="Edit_inter_Ext" (ngSubmit)="prologin()">
+                <div>
+                   <input type="text"     style="width: 13%; height: 28px;font-size: 17px;" formControlName="Fullname" required>
+                     </div>  
+                  
+                      <div style="    position: relative;
+                      right: 35%;
+                      color: white;
+                      bottom: 30px;">
+                        <a  
+                       class="btn btn-sm btn-default float-right" (click)="prologin(Fullname)"  >Submit</a>
+                      </div>
+                     
+                   
+            </form>
+          </div>
+
+
+
+            </h3>
+            <h3 *ngIf="getDataFormLocal_local === null && getDataFormLocal_gmail !== null && getDataFormLocal_fb === null ">{{getDataFormLocal_gmail.name}}
+              <!-- <span class="font-weight-light">, 27</span> -->
+            </h3>
+         
+            <h3 *ngIf=" getDataFormLocal_fb !== null && getDataFormLocal_local === null && getDataFormLocal_gmail === null  ">{{getDataFormLocal_fb.fullName}}
+              <!-- <span class="font-weight-light">, 27</span> -->
+              <div>
+                <a  style="    position: relative;
+                right: 35%; color: white;" class="btn btn-sm btn-default float-right" (click)="editFunt()" [hidden]="editName" >Edit Name</a>
+              </div>
+           
+
+
+                                
+          <div [hidden] ="editForm">
+            <form action="" [formGroup]="Edit_inter_Ext" (ngSubmit)="prologin()">
+                        <div>
+                          <input type="text"  style="width: 13%; height: 28px;font-size: 17px;"  formControlName="Fullname" >
+                        </div>  
+                        <div style="    position: relative;
+                        right: 35%;
+                        color: white;
+                        bottom: 30px;">
+                          <a  
+                         class="btn btn-sm btn-default float-right" (click)="prologin(Fullname)"  >Submit</a>
+                        </div>
+                       
+            </form>
+          </div>
+            </h3>
+            <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>Bucharest, Romania</div>
+            <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer</div>
+            <div><i class="ni education_hat mr-2"></i>University of Computer Science</div>
+          </div>
+          <div class="abc">
+            <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+            </div>
+          <div class="mt-5 py-5 border-top text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-9">
+                <p>An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p>
+               
+                  <div class="col-lg-9">
+
+                     <a  (click)="EditProfile()">Edit Profile</a>
+                    <a style="position: absolute;right: 1px;" (click)="new_Add()">new Add</a> 
+    
+                  </div>
+               
+            
+               
+              </div>
+             
+            </div>
+          </div>
+
+
+
+
+
+          
+
+
+
+          <div class="mt-5 py-5 border-top text-center" *ngIf ="openFile">
+            <div class="row justify-content-center">
+              <div class="col-lg-9">
+                <!-- " -->
+                <!-- <p>An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p> -->
+                <form role="form" [formGroup]="EditProfileForm" (ngSubmit)="EditProfile()" >
+                  <div
+                    class="form-group mb-3"
+                    [ngClass]="{ focused: focus === true }"
+                  >
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"
+                          ><i class="ni ni-email-83"></i
+                        ></span>
+                      </div>
+                      <input
+                        class="form-control"
+                        placeholder="Username"
+                        formControlName="username"
+                        type="email"
+                        (focus)="focus = true"
+                        (blur)="focus = false"
+                      />
+                    </div>
+                    <span
+                      *ngIf="
+                      EditProfileForm.controls['username'].invalid &&
+                        (EditProfileForm.controls['username'].dirty ||
+                        EditProfileForm.controls['username'].touched)
+                      "
+                      class="alert"
+                    >
+                      <span
+                        *ngIf="EditProfileForm.controls['username'].errors.required"
+                        class="color_Text"
+                      >
+                        Please enter username
+                      </span>
+                    </span>
+                  </div>
+  
+                  <div
+                    class="form-group"
+                    [ngClass]="{ focused: focus1 === true }"
+                  >
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"
+                          ><i class="ni ni-lock-circle-open"></i
+                        ></span>
+                      </div>
+                      <input
+                        class="form-control"
+                        placeholder="Password"
+                        formControlName="password"
+                        [type]="fieldTextType ? 'text' : 'password'"
+                        type="password"
+                        (focus)="focus1 = true"
+                        (blur)="focus1 = false"
+                      />
+                      <div class="input-group-append">
+                        <span class="input-group-text">
+                          <i
+                            class="fa"
+                            [ngClass]="{
+                              'fa-eye-slash': !fieldTextType,
+                              'fa-eye': fieldTextType
+                            }"
+                            (click)="toggleFieldTextType()"
+                          ></i>
+                        </span>
+                      </div>
+                    </div>
+                    <span
+                      *ngIf="
+                        EditProfileForm.controls['password'].invalid &&
+                        (EditProfileForm.controls['password'].dirty ||
+                          EditProfileForm.controls['password'].touched)
+                      "
+                      class="alert"
+                    >
+                      <span
+                        *ngIf="EditProfileForm.controls['password'].errors.required"
+                        class="color_Text"
+                      >
+                        Please enter password
+                      </span>
+                    </span>
+                  </div>
+  
+                  <div
+                  class="form-group mb-3"
+                  [ngClass]="{ focused: focus === true }"
+                >
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="ni ni-email-83"></i
+                      ></span>
+                    </div>
+                    <input
+                      class="form-control"
+                      placeholder="AddressLine1"
+                      formControlName="AddressLine1"
+                      type="email"
+                      (focus)="focus = true"
+                      (blur)="focus = false"
+                    />
+                  </div>
+                  <span
+                    *ngIf="
+                    EditProfileForm.controls['AddressLine1'].invalid &&
+                      (EditProfileForm.controls['AddressLine1'].dirty ||
+                      EditProfileForm.controls['AddressLine1'].touched)
+                    "
+                    class="alert"
+                  >
+                    <span
+                      *ngIf="EditProfileForm.controls['AddressLine1'].errors.required"
+                      class="color_Text"
+                    >
+                      Please enter username
+                    </span>
+                  </span>
+                </div>
+
+                <div
+                class="form-group mb-3"
+                [ngClass]="{ focused: focus === true }"
+              >
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="ni ni-email-83"></i
+                    ></span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="email"
+                    formControlName="email"
+                    type="email"
+                    (focus)="focus = true"
+                    (blur)="focus = false"
+                  />
+                </div>
+                <span
+                  *ngIf="
+                  EditProfileForm.controls['email'].invalid &&
+                    (EditProfileForm.controls['email'].dirty ||
+                    EditProfileForm.controls['email'].touched)
+                  "
+                  class="alert"
+                >
+                  <span
+                    *ngIf="EditProfileForm.controls['email'].errors.required"
+                    class="color_Text"
+                  >
+                    Please enter username
+                  </span>
+                </span>
+              </div>
+
+              <div
+              class="form-group mb-3"
+              [ngClass]="{ focused: focus === true }"
+            >
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="ni ni-email-83"></i
+                  ></span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="Pin"
+                  formControlName="Pin"
+                  type="email"
+                  (focus)="focus = true"
+                  (blur)="focus = false"
+                />
+              </div>
+              <span
+                *ngIf="
+                EditProfileForm.controls['Pin'].invalid &&
+                  (EditProfileForm.controls['Pin'].dirty ||
+                  EditProfileForm.controls['Pin'].touched)
+                "
+                class="alert"
+              >
+                <span
+                  *ngIf="EditProfileForm.controls['Pin'].errors.required"
+                  class="color_Text"
+                >
+                  Please enter Pin
+                </span>
+              </span>
+            </div>
+
+            <div
+            class="form-group mb-3"
+            [ngClass]="{ focused: focus === true }"
+          >
+            <div class="input-group input-group-alternative">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="ni ni-email-83"></i
+                ></span>
+              </div>
+              <input
+                class="form-control"
+                placeholder="Mobile_number"
+                formControlName="Mobile_number"
+                type="email"
+                (focus)="focus = true"
+                (blur)="focus = false"
+              />
+            </div>
+            <span
+              *ngIf="
+              EditProfileForm.controls['Mobile_number'].invalid &&
+                (EditProfileForm.controls['Mobile_number'].dirty ||
+                EditProfileForm.controls['Mobile_number'].touched)
+              "
+              class="alert"
+            >
+              <span
+                *ngIf="EditProfileForm.controls['Mobile_number'].errors.required"
+                class="color_Text"
+              >
+                Please enter Mobile number
+              </span>
+            </span>
+          </div>
+
+          <div
+          class="form-group mb-3"
+          [ngClass]="{ focused: focus === true }"
+        >
+          <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="ni ni-email-83"></i
+              ></span>
+            </div>
+            <input
+              class="form-control"
+              placeholder="Location"
+              formControlName="Location"
+              type="email"
+              (focus)="focus = true"
+              (blur)="focus = false"
+            />
+          </div>
+          <span
+            *ngIf="
+            EditProfileForm.controls['Location'].invalid &&
+              (EditProfileForm.controls['Location'].dirty ||
+              EditProfileForm.controls['Location'].touched)
+            "
+            class="alert"
+          >
+            <span
+              *ngIf="EditProfileForm.controls['Location'].errors.required"
+              class="color_Text"
+            >
+              Please enter Location
+            </span>
+          </span>
+        </div>
+
+
+
+
+        <div
+        class="form-group mb-3"
+        [ngClass]="{ focused: focus === true }"
+      >
+        <div class="input-group input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="ni ni-email-83"></i
+            ></span>
+          </div>
+          <textarea
+            class="form-control"
+            placeholder="Bio"
+            formControlName="Bio"
+            type="text"
+            (focus)="focus = true"
+            (blur)="focus = false"
+         ></textarea>
+        </div>
+        <span
+          *ngIf="
+          EditProfileForm.controls['Bio'].invalid &&
+            (EditProfileForm.controls['Bio'].dirty ||
+            EditProfileForm.controls['Bio'].touched)
+          "
+          class="alert"
+        >
+          <span
+            *ngIf="EditProfileForm.controls['Bio'].errors.required"
+            class="color_Text"
+          >
+            Please enter Bio
+          </span>
+        </span>
+      </div>
+        <!-- <div
+        class="form-group mb-3"
+        [ngClass]="{ focused: focus === true }"
+      >
+        <div class="input-group input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="ni ni-email-83"></i
+            ></span>
+          </div>
+          <input
+            class="form-control"
+            placeholder="emverification_status_for_email"
+            formControlName="emverification_status_for_email"
+            type="email"
+            (focus)="focus = true"
+            (blur)="focus = false"
+          />
+        </div>
+        <span
+          *ngIf="
+          EditProfileForm.controls['emverification_status_for_email'].invalid &&
+            (EditProfileForm.controls['emverification_status_for_email'].dirty ||
+            EditProfileForm.controls['emverification_status_for_email'].touched)
+          "
+          class="alert"
+        >
+          <span
+            *ngIf="EditProfileForm.controls['emverification_status_for_email'].errors.required"
+            class="color_Text"
+          >
+            verification status_for_email
+          </span>
+        </span>
+      </div> -->
+
+                  <div class="text-center">
+                    <button type="submit"  [disabled]="!EditProfileForm.valid"class="btn btn-primary my-4">
+                     Edit Profile
+                    </button>
+                  </div>
+                </form>
+              </div>
+             
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+         
+        </div>
+        
+        <div class="mt-5 py-5 border-top text-center" *ngIf="open_Adds">
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="col-lg-12 mt-6 mt-lg-0">
+                <!-- Menu -->
+                <div class="mb-3">
+                  <small class="text-uppercase font-weight-bold">With text</small>
+                </div>
+                <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
+                    <ngb-tab title="My listinigs ">
+                      
+                      <ng-template ngbTabContent>
+                        <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                        <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title=" My Promotions">
+                      <ng-template ngbTabContent>
+                          <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="My Exchanges ">
+                      <ng-template ngbTabContent>
+                          <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                      </ng-template>
+                    </ngb-tab>
+                     <ngb-tab title="My Orders & Sales ">
+                      <ng-template ngbTabContent>
+                          <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Liked Ads">
+                      <ng-template ngbTabContent>
+                          <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Followes and Following Ads">
+                      <ng-template ngbTabContent>
+                          <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="Reviews">
+                      <ng-template ngbTabContent>
+                          <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                      </ng-template>
+                    </ngb-tab>
+                    
+                </ngb-tabset>
+              </div>
+            </div>
+            </div>
+           
+          
+        </div> 
+      </div>
+      <div>
+      </div>
+    </div>
+    
+  </section>
+</main>

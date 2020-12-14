@@ -1,0 +1,46 @@
+
+/* / You can add global styles to this file, and also import other style files / */
+@import '~ngx-toastr/toastr';
+
+@media (min-width: 768px){
+.section-hero {
+min-height: 250px !important;
+}
+}
+
+.custom-tab-content .tab-content{
+box-shadow:none !important;
+border:none !important
+}
+
+.tabsections123 .nav-link{
+padding:0 !important;
+}
+.tabsections123 .nav-link div{
+padding:0.75rem 1rem !important;
+}
+
+.ngcompletedelete .autocomplete-container{
+    height:42px !important;
+    box-shadow:none !important;
+}
+
+.tab-content{
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+}
+
+
+.tab-footer ul{
+    margin-bottom:0px;
+    width: fit-content;
+    margin: auto;
+    }
+    .tab-footer ul .page-item.disabled .page-link,.tab-footer ul .page-item.next-item .page-link,.tab-footer ul .page-item.last-item .page-link {
+    color: #8898aa;
+    pointer-events: none;
+    cursor: auto;
+    background-color: transparent;
+    border-color: transparent;
+    width: fit-content;
+    }

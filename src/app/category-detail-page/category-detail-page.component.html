@@ -1,0 +1,67 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <app-navbar></app-navbar>
+    <div class="container pt-lg-md" style="padding: 0 !important">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 catcls" *ngFor="let item of getSubCategoryById">
+          <div style="margin-top: 5%">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+              +
+              <div class="item">
+                <div class="item-img">
+                  <a>
+                    <img
+                      src="https://templates.joomla-monster.com/joomla30/jm-myoffers/components/com_djclassifieds/images/item/114_2_thm.jpg"
+                    />
+                  </a>
+                </div>
+                <div class="item-det det">
+                  <div class="title">
+                    <h2 style="color: aliceblue; font-size: 30px">
+                      <a>{{ item.SubCategoryName }}</a>
+                    </h2>
+                  </div>
+                  <div class="price-wrapper">
+                    <span class="auction_icon"></span>
+                    <div class="price" style="color: antiquewhite">
+                      <span class="label_title"></span
+                      ><span class="price_unit">$</span> 20
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      width: 365px;
+                      color: white;
+                      margin: 0px;
+                      margin-top: 17px;
+                    "
+                  >
+                    {{ item.Description }}
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-1 btn-success wd" type="button">
+                    Chat to seller
+                  </button>
+                  <button class="btn btn-1 btn-success ww" type="button">
+                    Make an offer
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
